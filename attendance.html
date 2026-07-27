@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance | Employee Attendance & Payroll System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo-circle small"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <h2>HR Suite</h2>
+            <p>Admin Portal</p>
+          </div>
+        </div>
+        <nav>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+          <a class="nav-link" href="employees.html"><i class="fa-solid fa-user-group"></i><span>Employees</span></a>
+          <a class="nav-link active" href="attendance.html"><i class="fa-solid fa-calendar-check"></i><span>Attendance</span></a>
+          <a class="nav-link" href="leave.html"><i class="fa-solid fa-file-circle-exclamation"></i><span>Leave Management</span></a>
+          <a class="nav-link" href="payroll.html"><i class="fa-solid fa-money-bill-wave"></i><span>Payroll</span></a>
+          <a class="nav-link" href="reports.html"><i class="fa-solid fa-chart-line"></i><span>Reports</span></a>
+          <a class="nav-link" href="settings.html"><i class="fa-solid fa-sliders"></i><span>Settings</span></a>
+          <a class="nav-link logout-link" href="#"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+        </nav>
+      </aside>
+
+      <div class="main-panel">
+        <header class="topbar">
+          <div>
+            <h1>Attendance Management</h1>
+            <p>Mark attendance and manage daily records.</p>
+          </div>
+          <div class="topbar-actions">
+            <div class="filter-control">
+              <label for="attendanceDate">Select Date</label>
+              <input id="attendanceDate" type="date" />
+            </div>
+            <button id="saveAttendanceBtn" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Attendance</button>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <section class="stats-grid compact">
+            <article class="stat-card">
+              <p>Total Employees</p>
+              <h3 id="attendanceTotal">0</h3>
+            </article>
+            <article class="stat-card">
+              <p>Present</p>
+              <h3 id="attendancePresent">0</h3>
+            </article>
+            <article class="stat-card">
+              <p>Absent</p>
+              <h3 id="attendanceAbsent">0</h3>
+            </article>
+            <article class="stat-card">
+              <p>Leave</p>
+              <h3 id="attendanceLeave">0</h3>
+            </article>
+            <article class="stat-card">
+              <p>Half Day</p>
+              <h3 id="attendanceHalf">0</h3>
+            </article>
+          </section>
+
+          <section class="page-card">
+            <div class="card-header">
+              <h3>Attendance Table</h3>
+            </div>
+            <div id="attendanceMessage" class="form-message"></div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Hours</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="attendanceTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/attendance.js"></script>
+  </body>
+</html>
